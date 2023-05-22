@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C#</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Pacifico&family=Playfair+Display&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="projeto.css">
+
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="./projeto.html">Marcos Henrique</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./projeto.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./projeto.html#sobre">Sobre</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./projeto.html#Experiências">Experiência</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Projetos
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="./python.html">Python</a></li>
+                      <li><a class="dropdown-item" href="./C.html">C</a></li>
+                      <li><a class="dropdown-item" href="./Csharp.html">C#</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+ 
+    </header>
+    <main>
+      
+
+    <div class="quadroscodigos">
+
+      <div class="card text-center">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="true" href="#">C#</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            
+            using System;<br>
+using System.Collections.Generic;<br>
+List<int> list = new List<int>();<br>
+list.Add(1);<br>
+list.Add(2);<br>
+list.Add(3);<br>
+list.Add(4);<br>
+list.Add(5);<br>
+list.Add(6);<br>
+list.Add(7);<br>
+list.Add(8);<br>
+list.Add(9);<br>
+<br>
+Stack<string> stack = new Stack<string>();<br>
+stack.Push("1");<br>
+stack.Push("2");<br>
+stack.Push("3");<br>
+stack.Push("4");<br>
+stack.Push("5");<br>
+stack.Push("6");<br>
+stack.Push("7");<br>
+stack.Push("8");<br>
+stack.Push("9");<br>
+<br>
+Console.WriteLine(list.Take(2).Count()); // 2<br>
+Console.WriteLine(stack.Take(10).Count()); // 3<br>
+Console.WriteLine(list.Skip(2));<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+public static class Enumerable<br>
+{<br>
+    public static IEnumerable<T> Take<T>(this IEnumerable<T> coll, int N)<br>
+    {<br>
+        var it = coll.GetEnumerator();<br>
+        for (int i = 0; i < N && it.MoveNext(); i++)<br>
+        yield return it.Current;<br>
+    }<br>
+    public static int Count<T>(this IEnumerable<T> coll)<br>
+    {<br>
+        int count = 0;<br>
+        var it = coll.GetEnumerator();<br>
+        while (it.MoveNext())<br>
+        count++;<br>
+        return count;<br>
+    }<br>
+    // Pula os primeiros N valores e retorna o resto da coleção<br>
+    public static IEnumerable<T> Skip<T>(this IEnumerable<T> coll, int N)<br>
+    {<br>
+        var it = coll.GetEnumerator();<br>
+        for (int i = 0; i < N && it.MoveNext(); i++){}<br>
+        <br>
+        while(it.MoveNext())<br>
+        {<br>
+            yield return it.Current;<br>
+        }<br>
+    }<br>
+    // Retorna a coleção com um elemento a mais no final dela<br>
+    public static IEnumerable<T> Append<T>(this IEnumerable<T> coll, T value)<br>
+    {<br>
+        throw new NotImplementedException();<br>
+    }<br>
+    // Retorna a coleção com um elemento a mais no inicio dela<br>
+    public static IEnumerable<T> Prepend<T>(this IEnumerable<T> coll, T value)<br>
+    {<br>
+        throw new NotImplementedException();<br>
+    }<br>
+    // Cria um array e preenche os elementos da coleção, convertendo a coleção para um array<br>
+    public static T[] ToArray<T>(this IEnumerable<T> coll)<br>
+    {<br>
+        T[] array = new T[coll.Count()];<br>
+        var it = coll.GetEnumerator();<br>
+        for(int i = 0; i < coll.Count() && it.MoveNext(); i++)<br>
+        {<br>
+            array[i] = it.Current;<br>
+        }<br>
+        return array;<br>
+    }<br>
+    // Cria uma lista e preenche os elementos da coleção, convertendo a coleção para uma lista<br>
+    public static List<T> ToList<T>(this IEnumerable<T> coll)<br>
+    {<br>
+        throw new NotImplementedException();<br>
+    }<br>
+    // Divide a coleção inicial em vários vetores de tamanho size<br>
+    public static IEnumerable<T[]> Chunk<T>(this IEnumerable<T> coll, int size)<br>
+    {<br>
+        throw new NotImplementedException();<br>
+    }<br>
+    // Concatena duas coleções retornando uma coleção maior<br>
+    public static IEnumerable<T> Concat<T>(this IEnumerable<T> coll, IEnumerable<T> second)<br>
+    {<br>
+        throw new NotImplementedException();<br>
+    }<br>
+    // Retorna o primeiro elemento da coleção, caso a coleção esteja vazia estoure um erro<br>
+    public static T First<T>(this IEnumerable<T> coll)<br>
+    {<br>
+        throw new NotImplementedException();<br>
+    }<br>
+    // Retorna o primeiro elemento da coleção, caso a coleção esteja vazia retorne o valor padrão default(T).<br>
+    public static T FirstOrDefault<T>(this IEnumerable<T> coll)<br>
+    {<br>
+        throw new NotImplementedException();<br>
+    }<br>
+    // Retorna o último elemento da coleção, caso a coleção esteja vazia estoure um erro<br>
+    public static T Last<T>(this IEnumerable<T> coll)<br>
+    {<br>
+        throw new NotImplementedException();<br>
+    }<br>
+    // Retorna o último elemento da coleção, caso a coleção esteja vazia retorne o valor padrão default(T).<br>
+    public static T LastOrDefault<T>(this IEnumerable<T> coll)<br>
+    {<br>
+        throw new NotImplementedException();<br>
+    }<br>
+    // Retorna o único elemento da coleção, caso ela estja vazia ou tenha mais de um elemento estoure um erro<br>
+    public static T Single<T>(this IEnumerable<T> coll)<br>
+    {<br>
+        throw new NotImplementedException();<br>
+    }<br>
+    // Retorna o único elemento da coleção, caso ela tenha mais de um elemento estoure um erro, esteja vazia retorne o<br>
+<br>
+    public static T SingleOrDefault<T>(this IEnumerable<T> coll)<br>
+    {<br>
+        throw new NotImplementedException();<br>
+    }<br>
+    // Retorna uma coleção com a ordem dos elementos invertida<br>
+    public static IEnumerable<T> Reverse<T>(this IEnumerable<T> coll)<br>
+    {<br>
+        throw new NotImplementedException();<br>
+    }<br>
+    // Dada duas coleções, retorna uma tupla juntando cada elemento par a par.<br>
+    // Exemplo: 1,2,3 com 'a','b','c' retornaria (1,'a'),(2,'b'),(3,'c')<br>
+    // Note que está função trabalha com 2 parâmetros genéricos<br>
+    public static IEnumerable<(T, R)> Zip<T, R>(this IEnumerable<T> coll, IEnumerable<T> second)<br>
+    {<br>
+      throw new NotImplementedException();<br>
+    }<br>
+}<br>
+          </p>
+        </div>
+      </div>
+    </div>
+    </main>
+</body>
+</html>

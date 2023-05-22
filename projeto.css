@@ -1,0 +1,125 @@
+body{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    margin: 0px;
+}
+/* main     */
+.bemvindo{
+    background-image: url(https://images5.alphacoders.com/737/737385.jpg);
+    background-repeat: no-repeat ;
+    background-size: 100%;
+
+    color: rgb(255, 255, 255);
+    height: 950px;
+    width: auto;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .bemvindo{
+        background-size: 500%;
+    }
+  }
+
+.sejabemvindo{
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+    margin-top: 20%;
+
+}
+
+.parte1{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+.eumesmo{
+    width: 300px;
+    height: 300px;
+    border-radius: 200px;
+}
+.tituloap{
+    font-family: 'Comfortaa', cursive;
+    font-size: 70px;
+    text-align: left;
+}
+.textoap{
+    font-size: 20px;
+    text-align: left;
+    color: gray;
+}
+
+
+.carousel-item{
+    height: 100%;
+    width: 100%;
+}
+.sobre{
+    background-color: white;
+    color: black;
+    font-family: 'Comfortaa', cursive;
+}
+.sobremim{
+    font-weight: bold;
+    font-family: 'Comfortaa', cursive;
+}
+.textosobremim{
+    font-size: 20px;
+}
+.Oprogramador{
+    height: 100%;
+    width: 100%;
+}
+.linha{
+    width: 40%;
+    margin-left: 50%;
+}
+.linhaa{
+    width: 50%;
+    margin-left: 10%;
+}
+.Jett{
+    height: 100%;
+    width: 100%;
+}
+.Experiências{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-family: 'Comfortaa', cursive;
+}
+.logos{
+    width: 200px;
+}
+.textoexperiencia{
+    text-align: center;
+}
+/* footer */
+.footer{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+.cotatosfont{
+    font-family: 'Comfortaa', cursive;
+}
+.redes{
+    margin: 12px;
+    margin-top: 0px; 
+    height: 30px;
+}
+.linkredes{
+    text-decoration: none;
+}
+
+/* python */
+
+.quadroscodigos{
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: black;
+    color: gray;
+}
+.card-text{
+    text-align: start;
+}
+.quadroscodigos{
+    margin-top: 100px;
+}

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Pacifico&family=Playfair+Display&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="projeto.css">
+
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="./projeto.html">Marcos Henrique</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./projeto.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./projeto.html#sobre">Sobre</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./projeto.html#Experiências">Experiência</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Projetos
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="./python.html">Python</a></li>
+                      <li><a class="dropdown-item" href="./C.html">C</a></li>
+                      <li><a class="dropdown-item" href="./Csharp.html">C#</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+ 
+    </header>
+    <main>
+
+    <div class="quadroscodigos">
+      <div class="card text-center">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="true" href="#">C</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            #include <math.h><br>
+              #include <stdio.h><br>
+              #include <stdlib.h><br>
+              #include <unistd.h><br>
+              #include <stdio.h><br>
+              #include <stdlib.h><br>
+              #include <string.h><br>
+              <br>
+              #include "formatacao.h"<br>
+              <br>
+              void parou() {<br>
+                int c = getchar();<br>
+                int d = getchar();<br>
+              }<br>
+              <br>
+              float rendimento(float montante, float valor) { return montante - valor; }<br>
+              float tributacao (float rendimento, int tempo)<br>
+              {<br>
+                if (tempo <= 3)<br>
+                  rendimento = rendimento*0.775;<br>
+                if (tempo > 3 && tempo <= 12)<br>
+                  rendimento = rendimento*0.80;<br>
+                if (tempo > 12 && tempo <= 24)<br>
+                  rendimento = rendimento*0.825;<br>
+                if (tempo > 24)<br>
+                  rendimento = rendimento*0.85;<br>
+                return rendimento;<br>
+              }<br>
+              <br>
+              void print_lento(char *frase) {<br>
+                for (int i = 0; frase[i] != '_'; i++) {<br>
+                  printf("%c", frase[i]);<br>
+                  fflush(stdout);<br>
+                  usleep(100000);<br>
+                }<br>
+              }<br>
+              <br>
+              int main() {<br>
+                char frase_fim[30] = "Finalizando o Programa!_";<br>
+                char frase[50] = "Bem Vindo ao Investeringskontroll!\n. . ._";<br>
+                print_lento(frase);<br>
+                while (1) {<br>
+                  int opcao;<br>
+                  float valor, juros, montante;<br>
+                  int tempo;<br>
+                  float Selic = 13.75;<br>
+                  char a[1], b[1];<br>
+                  float desejada, salarioAtual, economiaAtual, valorDaEconomia, rendPassiva,<br>
+                      rendAplicacoes;<br>
+              <br>
+                  printf("\n\n                      Escolha uma das opcoes de investimento:\n");<br>
+                  menu();<br>
+                  printf("> ");<br>
+                  scanf("%d", &opcao);<br>
+              <br>
+                  if (opcao == 0)<br>
+                    goto sae;<br>
+              <br>
+              <br>
+                  switch (opcao) {<br>
+                  case 1: // Poupanca<br>
+                    printf("Informe o tempo de investimento (em meses): ");<br>
+                    scanf("%d", &tempo);<br>
+                    while (tempo <= 0) <br>
+                    {<br>
+                      printf("\nDigite um tempo válido!");<br>
+                      printf("\nInforme o tempo de investimento (em meses): ");<br>
+                      getchar();<br>
+                      scanf("%d", &tempo);<br>
+                    }<br>
+              <br>
+                    <br>
+                    printf("\nInforme o valor a ser investido: ");<br>
+                    scanf("%f", &valor);<br>
+                    while (valor <= 0) {<br>
+                      printf("\nInvestimenos desse tipo devem ser valores possíveis");<br>
+                      printf("\nInforme o valor a ser investido: ");<br>
+                      getchar();<br>
+                      scanf("%f", &valor);<br>
+                    }<br>
+                  <br>
+                    <br>
+                    juros = 0.69; // Juros de "valor" ao mes na poupanca<br>
+                    montante = (juros / 100 * tempo + 1) * valor;<br>
+                    system("clear");<br>
+                    printf("\n════════════════════════════════════");<br>
+                    printf("\n►  Valor investido: R$ %.2f", valor);<br>
+                    printf("\n════════════════════════════════════\n");<br>
+                    printf("\n►  Valor final: R$ %.2f", montante);<br>
+                    printf("\n►  Rendimento Final: R$ %.2f", rendimento(montante, valor));<br>
+                    printf("\n►  Rendimento Mensal: R$ %.2f\n", rendimento(montante, valor) / tempo);<br>
+                    printf("\n════════════════════════════════════\n");<br>
+                    break;<br>
+              <br>
+                  case 2: // Tesouro Direto<br>
+                    printf("Informe o tempo de investimento (em meses): ");<br>
+                    scanf("%d", &tempo);<br>
+                    while (tempo <= 0) <br>
+                    {<br>
+                      printf("\nDigite um tempo válido!");<br>
+                      printf("\nInforme o tempo de investimento (em meses): ");<br>
+                      getchar();<br>
+                      scanf("%d", &tempo);<br>
+                    }<br>
+                    <br>
+                    printf("\nInforme o valor a ser investido: ");<br>
+                    scanf("%f", &valor);<br>
+                    <br>
+                    while (valor < 30 || valor > 1000000) {<br>
+                      printf("\nInvestimenos desse tipo devem ser de \nno mínimo R$30,00 e "<br>
+                             "no máximo de R$1.000.000!");<br>
+                      printf("\nInforme o valor a ser investido: ");<br>
+                      getchar();<br>
+                      scanf("%f", &valor);<br>
+                    }<br>
+              <br>
+                    juros = (Selic * 0.92) / 12; // taxa média máxima possível para investimento prefixados do tesouro direto<br>
+                    montante = (juros / 100 * tempo + 1) * valor;<br>
+                    system("clear");<br>
+                    printf("\n════════════════════════════════════");<br>
+                    printf("\n►  Valor investido: R$ %.2f", valor);<br>
+                    printf("\n════════════════════════════════════\n");<br>
+                    printf("\n►  Valor final: R$%.2f\n", montante);<br>
+                    printf("►  Rendimento Final: R$ %.2f\n", rendimento(montante, valor));<br>
+                    printf("►  Rendimento Mensal: R$ %.2f\n", rendimento(montante, valor) / tempo);<br>
+                    printf("\n►  Rendimento pós-tributação: R$ %.2f\n", tributacao(rendimento(montante, valor), tempo));<br>
+                    printf("►  Valor Final pós-tributação: R$ %.2f\n", valor + tributacao(rendimento(montante, valor), tempo));<br>
+                    printf("\n════════════════════════════════════\n");<br>
+                    break;<br>
+                    <br>
+              <br>
+                  case 3:// CDB<br>
+                    printf("Informe o tempo de investimento (em meses): ");<br>
+                    scanf("%d", &tempo);<br>
+                    while (tempo <= 0) <br>
+                    {<br>
+                      printf("\nDigite um tempo válido!");<br>
+                      printf("\nInforme o tempo de investimento (em meses): ");<br>
+                      getchar();<br>
+                      scanf("%d", &tempo);<br>
+                    }<br>
+              <br>
+                    printf("\nInforme o valor a ser investido: ");<br>
+                    scanf("%f", &valor);<br>
+                    while (valor < 500 || (int)valor % 500 != 0 || valor > 1000000) {<br>
+                      printf("\nInvestimenos desse tipo requerem valores múltiplos de 500!");<br>
+                      printf("\nInforme o valor a ser investido: ");<br>
+                      getchar();<br>
+                      scanf("%f", &valor);<br>
+                    }<br>
+                    <br>
+                    juros = ((Selic - 0.10)*0.7) / 12; // TAXA 70% CDI MENSAL<br>
+                    montante = (juros / 100 * tempo + 1) * valor;<br>
+                    system("clear");<br>
+                    printf("\n════════════════════════════════════");<br>
+                    printf("\n►  Valor investido: R$ %.2f", valor);<br>
+                    printf("\n════════════════════════════════════\n");<br>
+                    printf("\n►  Valor final (70%% da CDI): R$%.2f\n", montante);<br>
+                    printf("►  Rendimento Final: R$ %.2f\n", rendimento(montante, valor));<br>
+                    printf("►  Rendimento Mensal: R$ %.2f\n", rendimento(montante, valor) / tempo);<br>
+                    printf("\n►  Rendimento pós-tributação: R$ %.2f\n", tributacao(rendimento(montante, valor), tempo));<br>
+                    printf("►  Valor Final pós-tributação: R$ %.2f\n", valor + tributacao(rendimento(montante, valor), tempo));<br>
+              <br>
+                    printf("\n════════════════════════════════════\n");<br>
+                    <br>
+                    juros = ((Selic - 0.10)*1.27) / 12; // TAXA 127% CDI MENSAL<br>
+                    montante = (juros / 100 * tempo + 1) * valor;<br>
+                    printf("\n►  Valor final (127%% da CDI): R$%.2f\n", montante);<br>
+                    printf("►  Rendimento Final: R$ %.2f\n", rendimento(montante, valor));<br>
+                    printf("►  Rendimento Mensal: R$ %.2f\n", rendimento(montante, valor) / tempo);<br>
+                    printf("\n►  Rendimento pós-tributação: R$ %.2f\n", tributacao(rendimento(montante, valor), tempo));<br>
+                    printf("►  Valor Final pós-tributação: R$ %.2f\n", valor + tributacao(rendimento(montante, valor), tempo));<br>
+              <br>
+                    printf("\n════════════════════════════════════\n");<br>
+                    <br>
+                    juros = ((Selic - 0.10)*2.0) / 12; // TAXA 200% CDI MENSAL<br>
+                    montante = (juros / 100 * tempo + 1) * valor;<br>
+                    printf("\n►  Valor final (200%% da CDI): R$%.2f\n", montante);<br>
+                    printf("►  Rendimento Final: R$ %.2f\n", rendimento(montante, valor));<br>
+                    printf("►  Rendimento Mensal: R$ %.2f\n", rendimento(montante, valor) / tempo);<br>
+                    printf("\n►  Rendimento pós-tributação: R$ %.2f\n", tributacao(rendimento(montante, valor), tempo));<br>
+                    printf("►  Valor Final pós-tributação: R$ %.2f\n", valor + tributacao(rendimento(montante, valor), tempo));<br>
+                    printf("\n════════════════════════════════════\n");<br>
+                    break;<br>
+              <br>
+                  case 4: // LCI<br>
+                    printf("Informe o tempo de investimento (em meses): ");<br>
+                    scanf("%d", &tempo);<br>
+                    while (tempo <= 0) <br>
+                    {<br>
+                      printf("\nDigite um tempo válido!");<br>
+                      printf("\nInforme o tempo de investimento (em meses): ");<br>
+                      getchar();<br>
+                      scanf("%d", &tempo);<br>
+                    }<br>
+                    <br>
+                    printf("Informe o valor a ser investido: ");<br>
+                    scanf("%f", &valor);<br>
+                    while (valor < 1000 || (int)valor % 1000 != 0 || valor > 1000000) {<br>
+                      printf("\nInvestimenos desse tipo requerem valores múltiplos de 1000!");<br>
+                      printf("\nInforme o valor a ser investido: ");<br>
+                      getchar();<br>
+                      scanf("%f", &valor);<br>
+                    }<br>
+              <br>
+                    juros = (Selic * 0.92) / 12; // 92% da Selic<br>
+                    montante = (juros / 100 * tempo + 1) * valor;<br>
+                    system("clear");<br>
+                    printf("\n════════════════════════════════════");<br>
+                    printf("\n►  Valor investido: R$ %.2f", valor);<br>
+                    printf("\n════════════════════════════════════\n");<br>
+                    printf("\n►  Montante final (92%% da taxa Selic): R$%.2f\n", montante);<br>
+                    printf("►  Rendimento Final de: %.2f\n", rendimento(montante, valor));<br>
+                    printf("►  Rendimento Mensal: %.2f\n", rendimento(montante, valor) / tempo);<br>
+              <br>
+                    printf("\n════════════════════════════════════\n");<br>
+              <br>
+                    juros = Selic / 12; // 100% da Selic<br>
+                    montante = valor * pow((1 + juros / 100), tempo);<br>
+                    printf("\n►  Montante final (100%% da taxa Selic): R$%.2f\n", montante);<br>
+                    printf("►  Rendimento Final de: %.2f\n", rendimento(montante, valor));<br>
+                    printf("►  Rendimento Mensal: %.2f\n", rendimento(montante, valor) / tempo);<br>
+                    printf("\n════════════════════════════════════\n");<br>
+                    break;<br>
+              <br>
+                  case 5: // LCA<br>
+                    printf("Informe o tempo de investimento (em meses): ");<br>
+                    scanf("%d", &tempo);<br>
+                    while (tempo <= 0) <br>
+                    {<br>
+                      printf("\nDigite um tempo válido!");<br>
+                      printf("\nInforme o tempo de investimento (em meses): ");<br>
+                      getchar();<br>
+                      scanf("%d", &tempo);<br>
+                    }<br>
+                    <br>
+                    printf("Informe o valor a ser investido: ");<br>
+                    scanf("%f", &valor);<br>
+                    while (valor < 1000 || (int)valor % 1000 != 0 || valor > 1000000) {<br>
+                      printf("\nInvestimenos desse tipo requerem valores múltiplos de 1000!");<br>
+                      printf("\nInforme o valor a ser investido: ");<br>
+                      getchar();<br>
+                      scanf("%f", &valor);<br>
+                    }<br>
+              <br>
+                    juros = (Selic * 0.92) / 12; // 92% da Selic<br>
+                    montante = (juros / 100 * tempo + 1) * valor;<br>
+                    system("clear");<br>
+                    printf("\n════════════════════════════════════");<br>
+                    printf("\n►  Valor investido: R$ %.2f", valor);<br>
+                    printf("\n════════════════════════════════════\n");<br>
+                    printf("\n►  Montante final (92%% da taxa Selic): R$%.2f\n", montante);<br>
+                    printf("►  Rendimento Final de: %.2f\n", rendimento(montante, valor));<br>
+                    printf("►  Rendimento Mensal: %.2f\n", rendimento(montante, valor) / tempo);<br>
+              <br>
+                    printf("\n════════════════════════════════════\n");<br>
+              <br>
+                    juros = Selic / 12; // 100% da Selic<br>
+                    montante = (juros / 100 * tempo + 1) * valor;<br>
+                    printf("\n►  Montante final (100%% da taxa Selic): R$%.2f\n", montante);<br>
+                    printf("►  Rendimento Final de: %.2f\n", rendimento(montante, valor));<br>
+                    printf("►  Rendimento Mensal: %.2f\n", rendimento(montante, valor) / tempo);<br>
+                    printf("\n════════════════════════════════════\n");<br>
+                    break;<br>
+              <br>
+                  case 6: //personalizada<br>
+                    system("clear");<br>
+                    printf("\n═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");<br>
+                    printf("\n► A renda passiva é o valor que você recebe que tem como origem do rendimento dos seus investimentos em ativos do mercado financeiro");<br>
+                    printf("\n═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════\n");<br>
+                    <br>
+                    printf("\nQual a sua renda passiva desejada?\n► ");  //Quanto você quer ganhar no futuro <br>
+                    while (1)<br>
+                    {<br>
+                      getchar();<br>
+                      scanf("%f", &desejada);<br>
+                      if (desejada > 0.0){<br>
+                        break;<br>
+                      }<br>
+                      else{<br>
+                        printf("\nDigite um prazo válido!\n");<br>
+                      }<br>
+                    }<br>
+                    <br>
+                    printf("\nQual a sua renda mensal atual?\n► ");          //Quanto a pessoa ganha por mês<br>
+                    while (1){<br>
+                      getchar();<br>
+                      scanf("%f", &salarioAtual);<br>
+                      if (salarioAtual > 0.0){<br>
+                        break;<br>
+                      }<br>
+                      else{<br>
+                        printf("\nDigite um prazo válido!\n");<br>
+                      }<br>
+                    }<br>
+                    printf("\nQuanto da sua renda você separa para seus investestimentos por mês? \n►(em porcentagem): "); // quanto você está disposto a separar por mes do seu salario<br>
+                    while (1){<br>
+                      getchar();<br>
+                      scanf("%f", &economiaAtual);<br>
+                      if (economiaAtual > 0.0){<br>
+                        break;<br>
+                      }<br>
+                      else{<br>
+                        printf("\nDigite um prazo válido!\n");<br>
+                      }<br>
+                    }<br>
+                    valorDaEconomia = salarioAtual * (economiaAtual / 100);<br>
+                    <br>
+                    printf("\nQuanto rende os seus investimentos por ano (aplicações financeiras com maior rentebilidade, até você alcançar seu objetivo) \n►(em porcentagem):"); // rendimento enquanto não atinge sua meta<br>
+              <br>
+                    while (1){<br>
+                      getchar();<br>
+                      scanf("%f", &rendAplicacoes);<br>
+                      if (rendAplicacoes > 0.0){<br>
+                        break;<br>
+                      }<br>
+                      else{<br>
+                        printf("\nDigite um prazo válido!\n");<br>
+                      }<br>
+                    }<br>
+                    <br>
+              <br>
+              <br>
+                    float grandeObjetivo = (desejada * 12) / (rendAplicacoes / 100);<br>
+                    printf("\n\nPara conseguir uma renda passiva de R$%.2f\nVocê precisa investir ao todo: R$%.2f\n\n", desejada, grandeObjetivo);<br>
+              <br>
+                    float rendPassivaAtual = 0.0;<br>
+                    float aporteAnual, rendAnual, valorFinal;<br>
+                    float rendPassivaAtualEmMes = 0.0;<br>
+              <br>
+                          <br>
+                    printf("╔═════════════╦═══════════════════╦══════════════╦══════════════════╦══════════════════╦═════════════════════╗\n");<br>
+                    printf("║             ║ APORTE ANUAL      ║ RENDA ANUAL  ║ VALOR FINAL      ║ RENDA PASSIVA    ║ RENDA PASSIVA (MES) ║\n");<br>
+                    printf("╠═════════════╬═══════════════════╬══════════════╬══════════════════╬══════════════════╬═════════════════════╣\n");<br>
+                    <br>
+                    for (int i = 0; rendPassivaAtualEmMes <= desejada; i++) {<br>
+                      if (i == 0) {<br>
+                        aporteAnual = valorDaEconomia * 12;<br>
+                        rendAnual = rendAplicacoes;<br>
+                        valorFinal = aporteAnual + (aporteAnual * (rendAnual / 100));<br>
+                        rendPassivaAtual = (rendAplicacoes / 100) * valorFinal;<br>
+                        rendPassivaAtualEmMes = rendPassivaAtual / 12;<br>
+                      }<br>
+              <br>
+                      if (i != 0) {<br>
+                        aporteAnual = valorFinal + valorDaEconomia * 12;<br>
+                        rendAnual = rendAplicacoes;<br>
+                        valorFinal = aporteAnual + (aporteAnual * (rendAnual / 100));<br>
+                        rendPassivaAtual = (rendAplicacoes / 100) * valorFinal;<br>
+                        rendPassivaAtualEmMes = rendPassivaAtual / 12;<br>
+                      }<br>
+                      <br>
+                      printf("║ ");<br>
+              <br>
+                      <br>
+                      <br>
+                      // Transformando os floats em char para poder ler o tamanho e ajustar na tabela<br>
+              <br>
+                      char strano[13];<br>
+                      sprintf(strano, "%i", i);<br>
+                      <br>
+                      char straporteAnual[19];<br>
+                      sprintf(straporteAnual, "%.2f", aporteAnual);<br>
+                      <br>
+                      char strrendAnual[14];<br>
+                      sprintf(strrendAnual, "%.2f", rendAnual);<br>
+              <br>
+                      char strvalorFinal[18];<br>
+                      sprintf(strvalorFinal, "%.2f", valorFinal);<br>
+                      <br>
+                      char strrendPassivaAtual[18];<br>
+                      sprintf(strrendPassivaAtual, "%.2f", rendPassivaAtual);<br>
+                      <br>
+                      char strrendPassivaAtualEmMes[21];<br>
+                      sprintf(strrendPassivaAtualEmMes, "%.2f", rendPassivaAtualEmMes);<br>
+                      <br>
+                      // printf na tabela<br>
+                      <br>
+                      printf("Ano %i", i + 1);<br>
+                      if(i == 9 || i == 99){<br>
+                          for(int j = 7; j != strlen(strano); j--){<br>
+                          printf(" ");<br>
+                        }<br>
+                      }<br>
+                      else{<br>
+                          for(int j = 8; j != strlen(strano); j--){<br>
+                          printf(" ");<br>
+                        }<br>
+                      }<br>
+                        <br>
+                      printf("║ ");<br>
+                      <br>
+                      if(strlen(straporteAnual) < 19) {<br>
+                        printf("R$%s", straporteAnual);<br>
+                        for(int j = 16; j != strlen(straporteAnual); j--){<br>
+                          printf(" ");<br>
+                        }<br>
+                      }<br>
+                      <br>
+                      printf("║");<br>
+                      <br>
+                      if(strlen(strrendAnual) < 14) {<br>
+                        printf(" %s%%", strrendAnual);<br>
+                        for(int j = 12; j != strlen(strrendAnual); j--){<br>
+                          printf(" ");<br>
+                        }<br>
+                      }<br>
+                      printf("║");<br>
+                      <br>
+                      if(strlen(strvalorFinal) < 18) {<br>
+                        printf("R$%s", strvalorFinal);<br>
+                        for(int j = 16; j != strlen(strvalorFinal); j--){<br>
+                          printf(" ");<br>
+                        }<br>
+                      }<br>
+                      printf("║");<br>
+                      <br>
+                      if(strlen(strrendPassivaAtual) < 18) {<br>
+                        printf("R$%s", strrendPassivaAtual);<br>
+                        for(int j = 16; j != strlen(strrendPassivaAtual); j--){<br>
+                          printf(" ");<br>
+                        }<br>
+                      }<br>
+                      printf("║");<br>
+                      <br>
+                      if(strlen(strrendPassivaAtualEmMes) < 21) {<br>
+                        printf(" R$%s", strrendPassivaAtualEmMes);<br>
+                        for(int j = 18; j != strlen(strrendPassivaAtualEmMes); j--){<br>
+                          printf(" ");<br>
+                        }<br>
+                      }<br>
+                      printf("║\n");      <br>
+                      printf("╠═════════════╬═══════════════════╬══════════════╬══════════════════╬══════════════════╬═════════════════════╣\n");<br>
+                    }<br>
+                    break;<br>
+              <br>
+                  case 0:<br>
+                    goto sae;<br>
+              <br>
+                  default:<br>
+                    printf("Opção inválida!\n");<br>
+                    break;<br>
+                  }<br>
+                  printf("\nAperte <ENTER> para continuar\n");<br>
+                  parou();<br>
+                  system("clear");<br>
+                }<br>
+              sae:<br>
+                print_lento(frase_fim);<br>
+              }<br>
+          </p>
+        </div>
+      </div>
+    </div>
+    </main>
+</body>
+</html>
+
